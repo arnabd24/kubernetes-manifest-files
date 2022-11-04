@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: mongodb
-        image: mongodb
+        image: mongo
         ports:
         - containerPort: 27017
         volumeMounts:
