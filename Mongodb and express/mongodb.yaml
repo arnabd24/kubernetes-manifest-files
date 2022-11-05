@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: mongodb
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,6 +16,11 @@ spec:
       containers:
       - name: mongodb
         image: mongo
+        command:
+        - mongod
+        - "--bind_ip_all"
+        - "--replSet"
+        - rs0
         ports:
         - containerPort: 27017
         volumeMounts:
